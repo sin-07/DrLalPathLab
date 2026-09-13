@@ -12,7 +12,8 @@ import {
   ArrowRight, 
   HeartPulse, 
   CheckCircle2, 
-  Building2
+  Building2,
+  MessageSquare
 } from "lucide-react";
 
 interface HeroSectionProps {
@@ -21,7 +22,7 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-slate-50">
+    <section className="relative overflow-hidden pt-6 pb-14 lg:pt-14 lg:pb-24 bg-slate-50">
       {/* Authentic Diagnostic Clinic Collection Center Background with Sleek Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <Image
@@ -40,40 +41,41 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* LEFT COLUMN: Main Typography & Value Prop (GSAP Reveal from Left) */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             
-            {/* GSAP Reveal Down: Trust Ribbon */}
-            <div className="gsap-reveal-down inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 text-xs sm:text-sm font-semibold shadow-sm">
-              <span className="flex h-2 w-2 rounded-full bg-amber-500 animate-ping" />
-              <span className="font-bold text-amber-700">Authorized Franchise Center • Dr Lal PathLabs</span>
+            {/* GSAP Reveal Down: Trust Ribbon (Mobile friendly, single line) */}
+            <div className="gsap-reveal-down inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-950 text-[11px] sm:text-xs font-bold shadow-sm max-w-full">
+              <span className="flex h-2 w-2 rounded-full bg-amber-500 shrink-0" />
+              <span className="font-bold text-amber-700 whitespace-nowrap">Authorized Center</span>
               <span className="text-amber-400">•</span>
-              <span className="text-slate-700">Jaganpura, Patna</span>
+              <span className="text-slate-700 whitespace-nowrap">Dr Lal PathLabs • Patna</span>
             </div>
 
             {/* GSAP Reveal Left: Main Headline */}
             <div className="gsap-reveal-left space-y-3">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12] font-heading">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.18] font-heading">
                 Precision Diagnostics,{" "}
                 <span className="bg-gradient-to-r from-sky-600 via-sky-700 to-indigo-800 bg-clip-text text-transparent">
                   Trusted Results.
                 </span>{" "}
-                <br />
-                Right At Your Doorstep.
+                <span className="block text-xl sm:text-3xl md:text-4xl lg:text-5xl text-slate-800 font-extrabold mt-1">
+                  Right At Your Doorstep.
+                </span>
               </h1>
 
               {/* Franchise clarity callout */}
-              <div className="p-4 rounded-2xl bg-gradient-to-r from-slate-900 to-brand-navy text-white shadow-xl border border-slate-800 relative overflow-hidden">
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-slate-900 to-brand-navy text-white shadow-xl border border-slate-800 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-xl" />
-                <div className="flex items-start gap-3 relative z-10">
-                  <Building2 className="w-6 h-6 text-amber-400 shrink-0 mt-0.5" />
-                  <div className="space-y-1">
-                    <p className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                <div className="flex items-start gap-2.5 sm:gap-3 relative z-10">
+                  <Building2 className="w-4 h-4 sm:w-6 sm:h-6 text-amber-400 shrink-0 mt-0.5" />
+                  <div className="space-y-0.5 sm:space-y-1">
+                    <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400">
                       Official Franchise Clarification
                     </p>
-                    <p className="text-sm text-slate-200 leading-relaxed font-medium">
+                    <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
                       <strong>Asneha Diagnostic</strong> is the official authorized collection center of <strong>Dr Lal PathLabs</strong> in Patna. All tests are processed with Dr Lal PathLabs&apos; certified barcoded analyzers with genuine computerized reports.
                     </p>
                   </div>
@@ -82,48 +84,59 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* GSAP Reveal Left: Feature Bullets */}
-            <div className="gsap-reveal-left grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              <div className="flex items-center gap-2.5 text-sm text-slate-700 font-medium">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+            <div className="gsap-reveal-left grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 pt-1">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
                 <span><strong>Free Home Collection</strong> in Patna</span>
               </div>
-              <div className="flex items-center gap-2.5 text-sm text-slate-700 font-medium">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
                 <span><strong>100% Barcoded</strong> Vacuum Tubes</span>
               </div>
-              <div className="flex items-center gap-2.5 text-sm text-slate-700 font-medium">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
                 <span><strong>Same-Day</strong> Digital Reports on WhatsApp</span>
               </div>
-              <div className="flex items-center gap-2.5 text-sm text-slate-700 font-medium">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
                 <span>Lead by <strong>Ajay Kumar (DMLT)</strong></span>
               </div>
             </div>
 
-            {/* Action Buttons & Fast Booking Trigger */}
-            <div className="gsap-reveal-up flex flex-wrap items-center gap-4 pt-2">
+            {/* Action Buttons: Full width on mobile */}
+            <div className="gsap-reveal-up flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2">
               <button
                 onClick={onOpenBooking}
-                className="flex items-center gap-3 px-7 py-4 rounded-2xl text-base font-extrabold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 hover:from-amber-300 hover:to-amber-400 shadow-xl shadow-amber-500/25 hover:shadow-2xl hover:shadow-amber-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base font-black text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 hover:from-amber-300 hover:to-amber-400 shadow-xl shadow-amber-500/25 active:scale-95 transition-all cursor-pointer"
               >
-                <CalendarCheck className="w-5 h-5 text-slate-950" />
+                <CalendarCheck className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 shrink-0" />
                 <span>Book Free Home Sample Pickup</span>
-                <ArrowRight className="w-4 h-4 text-slate-950" />
+                <ArrowRight className="w-4 h-4 text-slate-950 shrink-0" />
               </button>
 
-              <a
-                href="tel:7654041612"
-                className="flex items-center gap-2.5 px-6 py-4 rounded-2xl text-base font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm hover:shadow transition-all"
-              >
-                <PhoneCall className="w-5 h-5 text-sky-600" />
-                <span>Call +91 7654041612</span>
-              </a>
+              <div className="grid grid-cols-2 sm:flex items-center gap-2">
+                <a
+                  href="tel:7654041612"
+                  className="flex items-center justify-center gap-1.5 px-3 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-base font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-sky-600 shrink-0" />
+                  <span>Call Lab</span>
+                </a>
+                <a
+                  href="https://wa.me/917654041612?text=Hello%20Ajay%20ji,%20I%20want%20to%20inquire%20about%20blood%20test%20at%20Asneha%20Diagnostic"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-1.5 px-3 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-base font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-sm transition-all"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
             </div>
 
             {/* Location quick snippet */}
-            <div className="gsap-reveal-up flex items-center gap-2 text-xs text-slate-600 font-medium">
-              <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
+            <div className="gsap-reveal-up flex items-start sm:items-center gap-2 text-[11px] sm:text-xs text-slate-600 font-medium pt-1">
+              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-500 shrink-0 mt-0.5 sm:mt-0" />
               <span>East of Double Transformer, New Jaganpura Colony, Base Nagar, Patna - 800027</span>
             </div>
           </div>

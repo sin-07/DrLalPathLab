@@ -35,7 +35,7 @@ export default function HomePage() {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950">
+    <div ref={containerRef} className="min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950 pb-24 sm:pb-0 overflow-x-hidden">
       
       {/* Navigation */}
       <Navbar onOpenBooking={() => handleOpenBooking()} />
