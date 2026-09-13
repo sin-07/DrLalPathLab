@@ -32,8 +32,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   
-  // Mobile accordion state
-  const [mobileAccordion, setMobileAccordion] = useState<string | null>("packages");
+  // Mobile accordion state (closed by default so no dropdown opens automatically)
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
 
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -423,7 +423,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
               {/* Mobile & Tablet Hamburger Toggle */}
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={() => {
+                  setMobileMenuOpen(!mobileMenuOpen);
+                  setMobileAccordion(null);
+                }}
                 className="xl:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none transition-colors shrink-0"
                 aria-label="Toggle Navigation Menu"
               >

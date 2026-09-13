@@ -86,8 +86,8 @@ const FAQS: FAQItem[] = [
 ];
 
 export const FaqSection: React.FC = () => {
-  // Open the first item by default for immediate visual engagement
-  const [openId, setOpenId] = useState<string | null>("home-collection");
+  // All accordion items closed by default
+  const [openId, setOpenId] = useState<string | null>(null);
 
   const toggleAccordion = (id: string) => {
     setOpenId(openId === id ? null : id);
