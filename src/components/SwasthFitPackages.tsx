@@ -265,8 +265,11 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
 
             {/* Mobile swipe hint */}
             <div className="sm:hidden bg-amber-500/10 px-4 py-2 text-[11px] font-bold text-amber-900 border-b border-amber-200/60 flex items-center justify-between">
-              <span>👉 Swipe table sideways to compare all 5 packages</span>
-              <span className="text-xs">⇄</span>
+              <span className="flex items-center gap-1.5">
+                <ArrowRight className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                Swipe table sideways to compare all 5 packages
+              </span>
+              <span className="text-xs font-semibold">→</span>
             </div>
 
             <div className="overflow-x-auto">
@@ -307,8 +310,8 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
                             }`}
                           >
                             {isIncluded ? (
-                              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 font-bold">
-                                ✓
+                              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-700">
+                                <Check className="w-3.5 h-3.5 text-emerald-700" />
                               </span>
                             ) : (
                               <span className="text-slate-300 font-bold">—</span>

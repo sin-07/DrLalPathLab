@@ -15,7 +15,10 @@ import {
   Sparkles,
   ChevronDown,
   SunMedium,
-  Check
+  Check,
+  Sunrise,
+  Sun,
+  Sunset
 } from "lucide-react";
 import { SWASTH_FIT_PACKAGES } from "@/lib/data/packagesData";
 
@@ -27,10 +30,10 @@ interface HomeCollectionModalProps {
 }
 
 const TIME_SLOTS = [
-  { slot: "06:30 AM - 08:00 AM (Early Fasting)", note: "Best for Swasth Fit & Fasting Blood Sugar", icon: "🌅" },
-  { slot: "08:00 AM - 09:30 AM (Morning Fasting)", note: "Ideal morning fasting window", icon: "☀️" },
-  { slot: "09:30 AM - 11:30 AM (Routine)", note: "Post-prandial & general blood tests", icon: "🌤️" },
-  { slot: "04:00 PM - 07:00 PM (Evening)", note: "Non-fasting panels & urgent collection", icon: "🌇" },
+  { slot: "06:30 AM - 08:00 AM (Early Fasting)", note: "Best for Swasth Fit & Fasting Blood Sugar", Icon: Sunrise, color: "text-amber-500" },
+  { slot: "08:00 AM - 09:30 AM (Morning Fasting)", note: "Ideal morning fasting window", Icon: Sun, color: "text-amber-600" },
+  { slot: "09:30 AM - 11:30 AM (Routine)", note: "Post-prandial & general blood tests", Icon: SunMedium, color: "text-sky-500" },
+  { slot: "04:00 PM - 07:00 PM (Evening)", note: "Non-fasting panels & urgent collection", Icon: Sunset, color: "text-indigo-500" },
 ];
 
 export const HomeCollectionModal: React.FC<HomeCollectionModalProps> = ({
@@ -466,7 +469,7 @@ export const HomeCollectionModal: React.FC<HomeCollectionModalProps> = ({
                           }`}
                         >
                           <div className="flex items-center gap-2">
-                            <span>{ts.icon}</span>
+                            <ts.Icon className={`w-4 h-4 ${ts.color} shrink-0`} />
                             <div>
                               <div className="text-xs font-bold">{ts.slot}</div>
                               <div className="text-[10px] text-slate-400">{ts.note}</div>

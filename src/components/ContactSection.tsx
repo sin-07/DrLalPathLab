@@ -126,7 +126,7 @@ export const ContactSection: React.FC = () => {
                       Monday to Sunday: 7:00 AM – 8:00 PM
                     </p>
                     <p className="text-xs text-emerald-700 font-semibold mt-0.5">
-                      ★ Home Sample Collection starts early at 6:30 AM
+                      Home Sample Collection starts early at 6:30 AM
                     </p>
                   </div>
                 </div>
@@ -206,12 +206,12 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   <p className="text-slate-600 leading-snug">
-                    📍 East of Double Transformer, New Jaganpura Colony, Base Nagar, Patna - 800027
+                    East of Double Transformer, New Jaganpura Colony, Base Nagar, Patna - 800027
                   </p>
 
                   <div className="pt-2 border-t border-slate-200/80 flex flex-wrap items-center justify-between text-[11px] text-slate-500 gap-1">
                     <span><strong>Free Areas:</strong> Jaganpura, Ramkrishna Nagar, Kankarbagh</span>
-                    <span>🚗 Easy Patient Parking</span>
+                    <span>Easy Patient Parking</span>
                   </div>
                 </div>
               </div>

@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="#packages" className="hover:text-amber-400 transition-colors font-bold text-amber-400">
-                  Swasth Fit Super 4 (₹2,550) ★
+                  Swasth Fit Super 4 (₹2,550)
                 </Link>
               </li>
               <li>

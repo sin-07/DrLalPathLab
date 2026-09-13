@@ -20,7 +20,14 @@ import {
   ArrowRight,
   ExternalLink,
   Search,
-  CheckCircle2
+  CheckCircle2,
+  Camera,
+  MapPin,
+  Lock,
+  Thermometer,
+  FlaskConical,
+  Pill,
+  HeartPulse
 } from "lucide-react";
 import { SWASTH_FIT_PACKAGES } from "@/lib/data/packagesData";
 
@@ -257,12 +264,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
                     <div className="grid grid-cols-2 gap-2 text-xs font-semibold">
                       {[
-                        { title: "Fever & Infection", code: "CBC, Dengue, Typhoid", icon: "🌡️" },
-                        { title: "Diabetes Care", code: "HbA1c, Fasting Sugar", icon: "🩸" },
-                        { title: "Thyroid Profile", code: "TSH, Free T3 / T4", icon: "🦋" },
-                        { title: "Heart & Lipids", code: "Cholesterol, Triglycerides", icon: "❤️" },
-                        { title: "Liver & Kidney", code: "LFT, KFT, Creatinine", icon: "🧪" },
-                        { title: "Vitamins Panel", code: "Vitamin D3, B12", icon: "💊" },
+                        { title: "Fever & Infection", code: "CBC, Dengue, Typhoid", Icon: Thermometer, color: "text-amber-500" },
+                        { title: "Diabetes Care", code: "HbA1c, Fasting Sugar", Icon: Droplets, color: "text-rose-500" },
+                        { title: "Thyroid Profile", code: "TSH, Free T3 / T4", Icon: Activity, color: "text-indigo-500" },
+                        { title: "Heart & Lipids", code: "Cholesterol, Triglycerides", Icon: HeartPulse, color: "text-red-500" },
+                        { title: "Liver & Kidney", code: "LFT, KFT, Creatinine", Icon: FlaskConical, color: "text-cyan-500" },
+                        { title: "Vitamins Panel", code: "Vitamin D3, B12", Icon: Pill, color: "text-emerald-500" },
                       ].map((cat, i) => (
                         <Link
                           key={i}
@@ -271,7 +278,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                           className="p-2.5 rounded-xl bg-slate-50 hover:bg-sky-50 hover:border-sky-200 border border-transparent transition-all group"
                         >
                           <div className="flex items-center gap-1.5">
-                            <span>{cat.icon}</span>
+                            <cat.Icon className={`w-3.5 h-3.5 ${cat.color} shrink-0`} />
                             <span className="font-bold text-slate-900 group-hover:text-sky-700">
                               {cat.title}
                             </span>
@@ -536,30 +543,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   <Link
                     href="#gallery"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-3 py-2 rounded-xl bg-white font-semibold text-slate-800"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white font-semibold text-slate-800 hover:bg-slate-100 transition-colors"
                   >
-                    📸 Clinic Photographs
+                    <Camera className="w-4 h-4 text-amber-500 shrink-0" />
+                    <span>Clinic Photographs</span>
                   </Link>
                   <Link
                     href="#consumer-rights"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-3 py-2 rounded-xl bg-white font-semibold text-slate-800"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white font-semibold text-slate-800 hover:bg-slate-100 transition-colors"
                   >
-                    🛡️ Patient Consumer Rights
+                    <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <span>Patient Consumer Rights</span>
                   </Link>
                   <Link
                     href="#contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-3 py-2 rounded-xl bg-white font-semibold text-slate-800"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white font-semibold text-slate-800 hover:bg-slate-100 transition-colors"
                   >
-                    📍 East of Double Transformer Location
+                    <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
+                    <span>East of Double Transformer Location</span>
                   </Link>
                   <Link
                     href="/admin"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-3 py-2 rounded-xl bg-sky-50 font-bold text-sky-800"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-sky-50 font-bold text-sky-800 hover:bg-sky-100 transition-colors"
                   >
-                    🔐 Reception Staff Portal
+                    <Lock className="w-4 h-4 text-sky-600 shrink-0" />
+                    <span>Reception Staff Portal</span>
                   </Link>
                 </div>
               )}
