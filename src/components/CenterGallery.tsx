@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Camera, MapPin, CheckCircle2, Maximize2, X } from "lucide-react";
+import { Camera, MapPin, CheckCircle2, Maximize2, X, Phone, MessageSquare } from "lucide-react";
 
 interface GalleryPhoto {
   src: string;
@@ -192,8 +192,30 @@ export const CenterGallery: React.FC = () => {
               <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wide">
                 <span>Center In-Charge &amp; Head Phlebotomist</span>
               </div>
-              <h4 className="text-xl font-black text-white">Ajay Kumar (DMLT)</h4>
-              <p className="text-xs text-slate-400">
+              <div className="flex items-center gap-2.5 flex-wrap">
+                <h4 className="text-xl font-black text-white">Ajay Kumar (DMLT)</h4>
+                <div className="flex items-center gap-1.5">
+                  <a
+                    href="tel:7654041612"
+                    className="p-1.5 rounded-lg bg-amber-400/20 text-amber-300 hover:bg-amber-400 hover:text-slate-950 transition-colors flex items-center gap-1 text-[11px] font-bold"
+                    title="Direct Call Ajay Kumar"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Call</span>
+                  </a>
+                  <a
+                    href="https://wa.me/917654041612?text=Hello%20Ajay%20ji,%20I%20want%20to%20book%20a%20blood%20test%20at%20Asneha%20Diagnostic"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500 hover:text-white transition-colors flex items-center gap-1 text-[11px] font-bold"
+                    title="WhatsApp Ajay Kumar"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 mt-1">
                 Blood, Stool, Sputum, Urine, Body Fluid analysis &amp; Free Home Collection Specialist
               </p>
             </div>
@@ -202,17 +224,19 @@ export const CenterGallery: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="tel:7654041612"
-              className="px-5 py-3 rounded-xl font-bold text-xs text-slate-950 bg-amber-400 hover:bg-amber-300 shadow-md transition-all"
+              className="px-5 py-3 rounded-xl font-bold text-xs text-slate-950 bg-amber-400 hover:bg-amber-300 shadow-md transition-all flex items-center gap-2"
             >
-              Direct Call: 7654041612
+              <Phone className="w-4 h-4 text-slate-950" />
+              <span>Direct Call: 7654041612</span>
             </a>
             <a
               href="https://wa.me/917654041612?text=Hello%20Ajay%20ji,%20I%20want%20to%20book%20a%20blood%20test%20at%20Asneha%20Diagnostic"
               target="_blank"
               rel="noreferrer"
-              className="px-5 py-3 rounded-xl font-bold text-xs text-white bg-emerald-600 hover:bg-emerald-500 transition-all shadow-md"
+              className="px-5 py-3 rounded-xl font-bold text-xs text-white bg-emerald-600 hover:bg-emerald-500 transition-all shadow-md flex items-center gap-2"
             >
-              WhatsApp Ajay Kumar
+              <MessageSquare className="w-4 h-4" />
+              <span>WhatsApp Ajay Kumar</span>
             </a>
           </div>
         </div>

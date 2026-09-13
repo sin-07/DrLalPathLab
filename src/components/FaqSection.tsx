@@ -10,7 +10,8 @@ import {
   MapPin, 
   FileCheck2,
   Sparkles,
-  PhoneCall
+  PhoneCall,
+  MessageSquare
 } from "lucide-react";
 
 interface FAQItem {
@@ -199,13 +200,24 @@ export const FaqSection: React.FC = () => {
             <h4 className="text-sm font-bold text-white">Have a specific test prescription or medical question?</h4>
             <p className="text-xs text-slate-400 mt-0.5">Directly consult Ajay Kumar (DMLT) for custom rates &amp; sample slots.</p>
           </div>
-          <a
-            href="tel:7654041612"
-            className="px-4 py-2.5 rounded-xl font-bold text-xs text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all shrink-0 flex items-center gap-1.5 shadow-md"
-          >
-            <PhoneCall className="w-3.5 h-3.5" />
-            <span>Call +91 7654041612</span>
-          </a>
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <a
+              href="tel:7654041612"
+              className="px-4 py-2.5 rounded-xl font-bold text-xs text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all flex items-center gap-1.5 shadow-md"
+            >
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>Call Ajay Kumar</span>
+            </a>
+            <a
+              href="https://wa.me/917654041612?text=Hello%20Ajay%20ji,%20I%20have%20a%20query%20about%20lab%20test%20rates"
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2.5 rounded-xl font-bold text-xs text-white bg-emerald-600 hover:bg-emerald-500 transition-all flex items-center gap-1.5 shadow-md"
+            >
+              <MessageSquare className="w-3.5 h-3.5" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
         </div>
 
       </div>

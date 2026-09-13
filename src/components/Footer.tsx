@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Activity, Phone, Mail, MapPin, ShieldCheck, Heart } from "lucide-react";
+import { Activity, Phone, Mail, MapPin, ShieldCheck, Heart, MessageSquare } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
@@ -32,8 +32,26 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="pt-2 text-xs text-slate-400">
-              <div className="font-semibold text-slate-300">
-                Center In-Charge: <span className="text-amber-400 font-bold">Ajay Kumar (DMLT)</span>
+              <div className="font-semibold text-slate-300 flex items-center gap-1.5 flex-wrap">
+                <span>Center In-Charge: <strong className="text-amber-400 font-bold">Ajay Kumar (DMLT)</strong></span>
+                <span className="inline-flex items-center gap-1 ml-1">
+                  <a
+                    href="tel:7654041612"
+                    className="p-1 rounded-md bg-slate-800 hover:bg-slate-700 text-sky-400 transition-colors inline-flex items-center"
+                    title="Call Ajay Kumar"
+                  >
+                    <Phone className="w-3 h-3" />
+                  </a>
+                  <a
+                    href="https://wa.me/917654041612?text=Hello%20Ajay%20ji,%20I%20want%20to%20inquire%20about%20blood%20test%20at%20Asneha%20Diagnostic"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-1 rounded-md bg-slate-800 hover:bg-slate-700 text-emerald-400 transition-colors inline-flex items-center"
+                    title="WhatsApp Ajay Kumar"
+                  >
+                    <MessageSquare className="w-3 h-3" />
+                  </a>
+                </span>
               </div>
               <div className="mt-1">
                 Helpline: <a href="tel:7654041612" className="text-sky-400 font-bold hover:underline">+91 7654041612</a>

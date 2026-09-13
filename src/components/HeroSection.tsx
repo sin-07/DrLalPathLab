@@ -99,7 +99,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium">
                 <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
-                <span>Lead by <strong>Ajay Kumar (DMLT)</strong></span>
+                <span className="flex items-center gap-1.5 flex-wrap">
+                  <span>Lead by <strong>Ajay Kumar (DMLT)</strong></span>
+                  <span className="inline-flex items-center gap-1 ml-0.5">
+                    <a
+                      href="tel:7654041612"
+                      className="p-1 rounded-md bg-amber-100 hover:bg-amber-200 text-amber-900 transition-colors inline-flex items-center"
+                      title="Call Ajay Kumar"
+                    >
+                      <PhoneCall className="w-3 h-3 text-amber-700" />
+                    </a>
+                    <a
+                      href="https://wa.me/917654041612?text=Hello%20Ajay%20ji,%20I%20want%20to%20inquire%20about%20blood%20test%20at%20Asneha%20Diagnostic"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1 rounded-md bg-emerald-100 hover:bg-emerald-200 text-emerald-900 transition-colors inline-flex items-center"
+                      title="WhatsApp Ajay Kumar"
+                    >
+                      <MessageSquare className="w-3 h-3 text-emerald-700" />
+                    </a>
+                  </span>
+                </span>
               </div>
             </div>
 
