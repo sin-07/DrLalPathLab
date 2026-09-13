@@ -71,7 +71,7 @@ export const SWASTH_FIT_PACKAGES: PackageItem[] = [
   {
     id: "super-2",
     name: "Swasth Fit Super 2",
-    badge: "Diabetic & Blood Count",
+    badge: "Diabetic Care",
     price: 1550,
     originalPrice: 2800,
     parametersCount: 74,
@@ -106,7 +106,7 @@ export const SWASTH_FIT_PACKAGES: PackageItem[] = [
   {
     id: "super-3",
     name: "Swasth Fit Super 3",
-    badge: "Bone & Nerve Health",
+    badge: "Bone & Nerves",
     price: 2250,
     originalPrice: 4200,
     parametersCount: 68,
@@ -142,7 +142,7 @@ export const SWASTH_FIT_PACKAGES: PackageItem[] = [
   {
     id: "super-4",
     name: "Swasth Fit Super 4",
-    badge: "★ MOST POPULAR",
+    badge: "Most Popular",
     isPopular: true,
     price: 2550,
     originalPrice: 5100,
@@ -179,7 +179,7 @@ export const SWASTH_FIT_PACKAGES: PackageItem[] = [
   {
     id: "complete",
     name: "Swasth Fit Complete",
-    badge: "EXECUTIVE FULL BODY",
+    badge: "Full Body Master",
     price: 5200,
     originalPrice: 10500,
     parametersCount: 110,

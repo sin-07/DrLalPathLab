@@ -88,7 +88,7 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
 
         {/* MODE 1: ENHANCED CARDS VIEW */}
         {viewMode === "cards" && (
-          <div className="gsap-stagger-group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 items-stretch">
+          <div className="gsap-stagger-group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 xl:gap-3.5 2xl:gap-5 items-stretch">
             {SWASTH_FIT_PACKAGES.map((pkg) => {
               const isPopular = pkg.isPopular;
               const discountPercent = Math.round(
@@ -98,47 +98,56 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
               return (
                 <div
                   key={pkg.id}
-                  className={`gsap-stagger-item rounded-3xl p-6 transition-all duration-300 flex flex-col justify-between h-full relative ${
+                  className={`gsap-stagger-item rounded-3xl p-5 xl:p-4 2xl:p-5 transition-all duration-300 flex flex-col justify-between h-full relative ${
                     isPopular
                       ? "bg-gradient-to-b from-brand-navy via-slate-900 to-brand-navyDark text-white shadow-2xl ring-2 ring-amber-400 hover:shadow-amber-500/20 hover:-translate-y-1"
                       : "bg-white text-slate-900 border border-slate-200 shadow-lg hover:shadow-xl hover:border-slate-300 hover:-translate-y-1"
                   }`}
                 >
-                  <div>
-                    {/* Top Badge & Discount Header */}
-                    <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-dashed border-slate-200/40">
+                  <div className="flex flex-col flex-1">
+                    {/* Top Badge & Discount Header: Guaranteed Single-Line & Non-Wrapping */}
+                    <div className="flex items-center justify-between gap-1 mb-3.5 pb-2.5 border-b border-dashed border-slate-200/50">
                       <span
-                        className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider whitespace-nowrap ${
+                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider whitespace-nowrap shrink-0 ${
                           isPopular
                             ? "bg-amber-400 text-slate-950 shadow-sm"
                             : "bg-slate-100 text-slate-700 border border-slate-200"
                         }`}
                       >
-                        {isPopular && <Sparkles className="w-3 h-3 text-slate-950" />}
-                        {pkg.badge}
+                        {isPopular && <Sparkles className="w-3 h-3 text-slate-950 shrink-0" />}
+                        <span>{pkg.badge}</span>
                       </span>
+
                       <span
-                        className={`text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider ${
+                        className={`text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap shrink-0 ${
                           isPopular
-                            ? "bg-amber-400/20 text-amber-300 border border-amber-400/30"
-                            : "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                            ? "bg-amber-400/25 text-amber-300 border border-amber-400/40"
+                            : "bg-emerald-100 text-emerald-800 border border-emerald-300"
                         }`}
                       >
                         {discountPercent}% OFF
                       </span>
                     </div>
 
-                    {/* Title & Tagline */}
-                    <div>
-                      <h3
-                        className={`text-xl font-black font-heading leading-tight ${
-                          isPopular ? "text-white" : "text-slate-950"
-                        }`}
-                      >
-                        {pkg.name}
-                      </h3>
+                    {/* Title & Tagline with Synchronized Heights Across All Cards */}
+                    <div className="space-y-1">
+                      <div className="min-h-[50px] flex flex-col justify-center">
+                        <span className={`text-[10px] font-extrabold uppercase tracking-wider ${
+                          isPopular ? "text-amber-400" : "text-sky-600"
+                        }`}>
+                          Swasth Fit™
+                        </span>
+                        <h3
+                          className={`text-xl font-black font-heading leading-tight tracking-tight ${
+                            isPopular ? "text-white" : "text-slate-950"
+                          }`}
+                        >
+                          {pkg.name.replace("Swasth Fit ", "")}
+                        </h3>
+                      </div>
+
                       <p
-                        className={`text-xs mt-1.5 leading-relaxed line-clamp-2 ${
+                        className={`text-xs leading-snug line-clamp-2 h-9 ${
                           isPopular ? "text-slate-300" : "text-slate-500"
                         }`}
                       >
@@ -147,10 +156,14 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
                     </div>
 
                     {/* Pricing Display */}
-                    <div className="my-5 p-4 rounded-2xl bg-slate-50/80 border border-slate-200/70 dark:bg-slate-850/50">
+                    <div className={`my-4 p-3.5 rounded-2xl border ${
+                      isPopular 
+                        ? "bg-slate-800/80 border-amber-400/30 text-white" 
+                        : "bg-slate-50 border-slate-200/80 text-slate-900"
+                    }`}>
                       <div className="flex items-baseline gap-2">
                         <span
-                          className={`text-3xl font-black tracking-tight ${
+                          className={`text-2xl sm:text-3xl font-black tracking-tight font-heading ${
                             isPopular ? "text-amber-400" : "text-sky-600"
                           }`}
                         >
@@ -166,7 +179,7 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
                           className={`text-[10px] font-extrabold px-2 py-0.5 rounded-md ${
                             isPopular
                               ? "bg-amber-400/20 text-amber-300"
-                              : "bg-emerald-100/80 text-emerald-800"
+                              : "bg-emerald-100 text-emerald-800"
                           }`}
                         >
                           {pkg.parametersCount}+ Parameters
@@ -176,30 +189,30 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
                             isPopular ? "text-slate-300" : "text-slate-500"
                           }`}
                         >
-                          • Free Home Pickup
+                          • Free Pickup
                         </span>
                       </div>
                     </div>
 
                     {/* Inclusions List */}
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-2 mb-4 flex-1">
                       <p
-                        className={`text-[11px] font-bold uppercase tracking-wider ${
+                        className={`text-[10px] font-bold uppercase tracking-wider ${
                           isPopular ? "text-slate-400" : "text-slate-400"
                         }`}
                       >
-                        Included In Package:
+                        Included Key Panels:
                       </p>
                       <ul className="space-y-2 text-xs">
                         {pkg.tests.map((test, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <Check
-                              className={`w-4 h-4 shrink-0 mt-0.5 ${
+                              className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
                                 isPopular ? "text-amber-400" : "text-emerald-600"
                               }`}
                             />
                             <span
-                              className={`leading-snug ${
+                              className={`leading-snug text-xs ${
                                 isPopular
                                   ? "text-slate-200 font-medium"
                                   : "text-slate-700 font-medium"
@@ -214,16 +227,16 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
                   </div>
 
                   {/* Booking CTA Button (Pinned to Bottom) */}
-                  <div className="pt-2">
+                  <div className="pt-2 mt-auto">
                     <button
                       onClick={() => onSelectPackage(pkg.name, pkg.price)}
-                      className={`w-full py-3.5 px-4 rounded-xl text-xs font-black flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md ${
+                      className={`w-full py-3 px-3 rounded-xl text-xs font-black flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-md ${
                         isPopular
                           ? "bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 shadow-amber-400/30 hover:shadow-lg hover:shadow-amber-400/40"
                           : "bg-slate-950 hover:bg-slate-800 text-white hover:shadow-lg"
                       }`}
                     >
-                      <CalendarCheck2 className="w-4 h-4 shrink-0" />
+                      <CalendarCheck2 className="w-3.5 h-3.5 shrink-0" />
                       <span>Book For ₹{pkg.price.toLocaleString()}</span>
                     </button>
                   </div>
