@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Camera, MapPin, CheckCircle2, Maximize2, X } from "lucide-react";
 
@@ -71,6 +71,27 @@ export const CenterGallery: React.FC = () => {
   const filteredPhotos = selectedCategory === "all"
     ? GALLERY_PHOTOS
     : GALLERY_PHOTOS.filter((p) => p.category === selectedCategory);
+
+  // Freeze / lock background scroll when lightbox is open
+  useEffect(() => {
+    if (activePhoto) {
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prevOverflow;
+      };
+    }
+  }, [activePhoto]);
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!activePhoto) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActivePhoto(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activePhoto]);
 
   return (
     <section id="gallery" className="py-20 bg-slate-900 text-white relative overflow-hidden scroll-mt-20">
@@ -200,7 +221,12 @@ export const CenterGallery: React.FC = () => {
 
       {/* Lightbox Modal with Ultimate Popup Animation */}
       {activePhoto && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-ultimate-backdrop">
+        <div 
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setActivePhoto(null);
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-ultimate-backdrop"
+        >
           <div className="relative max-w-3xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 animate-ultimate-popup">
             <div className="p-4 border-b border-slate-800 flex items-center justify-between">
               <div>

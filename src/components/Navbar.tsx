@@ -42,6 +42,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   // Mobile accordion state (closed by default so no dropdown opens automatically)
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
 
+  // Freeze background scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prevOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
+
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = (menuName: string) => {
