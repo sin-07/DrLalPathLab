@@ -8,6 +8,7 @@ import { PopularTestsSection } from "@/components/PopularTestsSection";
 import { CenterGallery } from "@/components/CenterGallery";
 import { HowItWorks } from "@/components/HowItWorks";
 import { ConsumerRightsSection } from "@/components/ConsumerRightsSection";
+import { FaqSection } from "@/components/FaqSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { HomeCollectionModal } from "@/components/HomeCollectionModal";
@@ -59,7 +60,10 @@ export default function HomePage() {
         {/* 6. Know Your Rights As A Consumer (From Image 5) */}
         <ConsumerRightsSection />
 
-        {/* 7. Contact Details, Landmark & Directions */}
+        {/* 7. Frequently Asked Questions & Guidelines (Ultimate Dropdown Accordions) */}
+        <FaqSection />
+
+        {/* 8. Contact Details, Landmark & Directions */}
         <ContactSection />
       </main>
 

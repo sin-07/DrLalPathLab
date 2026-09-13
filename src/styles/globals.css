@@ -118,3 +118,125 @@ h1, h2, h3, h4, .font-heading {
 .animate-shimmer {
   animation: shimmer 2.5s infinite;
 }
+
+/* ==========================================================================
+   ULTIMATE ANIMATION SYSTEM: Popups, Dropdowns, Accordions & Micro-physics
+   ========================================================================== */
+
+/* 1. Ultimate Popup Animation: Physics-based Spring Scale-Up & Elevation */
+@keyframes ultimatePopupIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(24px);
+    filter: blur(6px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.015) translateY(-3px);
+    filter: blur(0px);
+  }
+  85% {
+    transform: scale(0.995) translateY(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes ultimatePopupOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.94) translateY(16px);
+  }
+}
+
+/* 2. Ultimate Dropdown Animation: Cascading Glassmorphic Curtain */
+@keyframes ultimateDropdownIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.96);
+    filter: blur(6px);
+  }
+  60% {
+    transform: translateY(2px) scale(1.008);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes ultimateBackdropFade {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* 3. Accordion Dropdown Content Expansion */
+@keyframes accordionDown {
+  from {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    height: var(--radix-accordion-content-height, auto);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlowAmber {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.25), 0 0 30px rgba(245, 158, 11, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(245, 158, 11, 0.55), 0 0 50px rgba(245, 158, 11, 0.25);
+  }
+}
+
+@keyframes gentleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Utility classes */
+.animate-ultimate-popup {
+  animation: ultimatePopupIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+.animate-ultimate-dropdown {
+  animation: ultimateDropdownIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top center;
+  will-change: transform, opacity, filter;
+}
+
+.animate-ultimate-backdrop {
+  animation: ultimateBackdropFade 0.28s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlowAmber 2.2s infinite ease-in-out;
+}
+
+.animate-gentle-bounce {
+  animation: gentleBounce 2.5s infinite ease-in-out;
+}
+

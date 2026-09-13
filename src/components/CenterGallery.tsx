@@ -164,10 +164,10 @@ export const CenterGallery: React.FC = () => {
 
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal with Ultimate Popup Animation */}
       {activePhoto && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md">
-          <div className="relative max-w-3xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-ultimate-backdrop">
+          <div className="relative max-w-3xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 animate-ultimate-popup">
             <div className="p-4 border-b border-slate-800 flex items-center justify-between">
               <div>
                 <h4 className="text-base font-bold text-white">{activePhoto.title}</h4>

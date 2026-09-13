@@ -335,10 +335,10 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
 
       </div>
 
-      {/* MODAL: Original Clinic Poster Viewer */}
+      {/* MODAL: Original Clinic Poster Viewer with Ultimate Popup Animation */}
       {showOriginalChart && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-ultimate-backdrop">
+          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col animate-ultimate-popup">
             <div className="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
               <div>
                 <h4 className="font-bold text-slate-900">Original Swasth Fit Tariff Chart &amp; Visiting Card</h4>
