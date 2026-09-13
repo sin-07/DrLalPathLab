@@ -120,28 +120,18 @@ h1, h2, h3, h4, .font-heading {
 }
 
 /* ==========================================================================
-   ULTIMATE ANIMATION SYSTEM: Popups, Dropdowns, Accordions & Micro-physics
+   ULTIMATE ANIMATION SYSTEM: High-Performance GPU Accelerated (60-120 FPS)
    ========================================================================== */
 
-/* 1. Ultimate Popup Animation: Physics-based Spring Scale-Up & Elevation */
+/* 1. Fast, Buttery-Smooth Popup Scale-Up */
 @keyframes ultimatePopupIn {
   0% {
     opacity: 0;
-    transform: scale(0.92) translateY(24px);
-    filter: blur(6px);
-  }
-  65% {
-    opacity: 1;
-    transform: scale(1.015) translateY(-3px);
-    filter: blur(0px);
-  }
-  85% {
-    transform: scale(0.995) translateY(1px);
+    transform: scale(0.95) translateY(12px);
   }
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
-    filter: blur(0px);
   }
 }
 
@@ -152,44 +142,38 @@ h1, h2, h3, h4, .font-heading {
   }
   100% {
     opacity: 0;
-    transform: scale(0.94) translateY(16px);
+    transform: scale(0.96) translateY(8px);
   }
 }
 
-/* 2. Ultimate Dropdown Animation: Cascading Glassmorphic Curtain */
+/* 2. Fast, Snappy Dropdown Curtain */
 @keyframes ultimateDropdownIn {
   0% {
     opacity: 0;
-    transform: translateY(-14px) scale(0.96);
-    filter: blur(6px);
-  }
-  60% {
-    transform: translateY(2px) scale(1.008);
+    transform: translateY(-8px) scale(0.98);
   }
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
-    filter: blur(0px);
   }
 }
 
+/* 3. Smooth Fade-in for Modal Backdrop */
 @keyframes ultimateBackdropFade {
   0% {
     opacity: 0;
-    backdrop-filter: blur(0px);
   }
   100% {
     opacity: 1;
-    backdrop-filter: blur(12px);
   }
 }
 
-/* 3. Accordion Dropdown Content Expansion */
+/* 4. Accordion Dropdown Content Expansion */
 @keyframes accordionDown {
   from {
     height: 0;
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
   to {
     height: var(--radix-accordion-content-height, auto);
@@ -216,20 +200,25 @@ h1, h2, h3, h4, .font-heading {
   }
 }
 
-/* Utility classes */
+/* Utility classes: GPU Promoted (Zero Reflow / Repaint) */
 .animate-ultimate-popup {
-  animation: ultimatePopupIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform, opacity, filter;
+  animation: ultimatePopupIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .animate-ultimate-dropdown {
-  animation: ultimateDropdownIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: ultimateDropdownIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transform-origin: top center;
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .animate-ultimate-backdrop {
-  animation: ultimateBackdropFade 0.28s ease-out forwards;
+  animation: ultimateBackdropFade 0.18s ease-out forwards;
+  will-change: opacity;
 }
 
 .animate-pulse-glow {
