@@ -9,6 +9,7 @@ interface GalleryPhoto {
   title: string;
   subtitle: string;
   tag: string;
+  category: "all" | "facility" | "lab" | "rates";
   span?: string;
 }
 
@@ -18,6 +19,7 @@ const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: "Center Entrance & Reception",
     subtitle: "Dr Lal PathLabs Authorized Collection Center sign & hygienic glass cabin",
     tag: "Main Storefront",
+    category: "facility",
     span: "md:col-span-1 lg:col-span-1",
   },
   {
@@ -25,6 +27,7 @@ const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: "Hygienic Sample Collection Desk",
     subtitle: "Sterile BD Vacutainer vacuum tubes, barcode labeling & patient comfort chair",
     tag: "Sample Station",
+    category: "lab",
     span: "md:col-span-1 lg:col-span-1",
   },
   {
@@ -32,6 +35,7 @@ const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: "Clinic Building Exterior",
     subtitle: "East of Double Transformer, New Jaganpura Colony, Base Nagar, Patna",
     tag: "Building Facade",
+    category: "facility",
     span: "md:col-span-1 lg:col-span-1",
   },
   {
@@ -39,6 +43,7 @@ const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: "Legacy of Superior Diagnostic Care",
     subtitle: "75+ years of clinical excellence trusted by millions of families",
     tag: "Brand Heritage",
+    category: "rates",
     span: "md:col-span-1 lg:col-span-1",
   },
   {
@@ -46,6 +51,7 @@ const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: "Official Swasth Fit Tariff Chart & Visiting Card",
     subtitle: "In-Charge: Ajay Kumar (DMLT) | Mob: 7654041612 | Transparent pricing",
     tag: "Pricing & In-Charge",
+    category: "rates",
     span: "md:col-span-1 lg:col-span-1",
   },
   {
@@ -53,15 +59,21 @@ const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: "Patient Consumer Rights Charter",
     subtitle: "Right to verified name, computerized invoices & critical SMS alerts",
     tag: "Quality Charter",
+    category: "rates",
     span: "md:col-span-1 lg:col-span-1",
   },
 ];
 
 export const CenterGallery: React.FC = () => {
   const [activePhoto, setActivePhoto] = useState<GalleryPhoto | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+
+  const filteredPhotos = selectedCategory === "all"
+    ? GALLERY_PHOTOS
+    : GALLERY_PHOTOS.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="gallery" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section id="gallery" className="py-20 bg-slate-900 text-white relative overflow-hidden scroll-mt-20">
       {/* Glow shapes */}
       <div className="absolute -top-20 -left-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -69,7 +81,7 @@ export const CenterGallery: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header: GSAP Upward */}
-        <div className="gsap-reveal-up text-center max-w-3xl mx-auto mb-12">
+        <div className="gsap-reveal-up text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
             <Camera className="w-3.5 h-3.5" />
             <span>Authentic Center Showcase</span>
@@ -80,11 +92,33 @@ export const CenterGallery: React.FC = () => {
           <p className="mt-3 text-sm sm:text-base text-slate-300">
             Take a real tour of <strong>Asneha Diagnostic</strong> in Patna. Certified hygienic environment, vacuum sample collection tubes, and certified staff led by Ajay Kumar (DMLT).
           </p>
+
+          {/* Interactive Category Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+            {[
+              { id: "all", label: "All Photographs (6)" },
+              { id: "facility", label: "Center & Entrance" },
+              { id: "lab", label: "Sample Station" },
+              { id: "rates", label: "Tariff & Rights" },
+            ].map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                  selectedCategory === cat.id
+                    ? "bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20"
+                    : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-700"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Gallery Grid: GSAP Reveal Stagger */}
         <div className="gsap-stagger-group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {GALLERY_PHOTOS.map((photo, index) => (
+          {filteredPhotos.map((photo, index) => (
             <div
               key={index}
               onClick={() => setActivePhoto(photo)}
