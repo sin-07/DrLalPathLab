@@ -1,4 +1,12 @@
 import mongoose from "mongoose";
+import dns from "dns";
+
+// Ensure Node.js resolves MongoDB Atlas SRV records smoothly on Windows
+try {
+  dns.setServers(["8.8.8.8", "1.1.1.1"]);
+} catch (e) {
+  // Ignore in environments where setting DNS servers is restricted
+}
 
 const MONGODB_URI = process.env.MONGODB_URI || "";
 
