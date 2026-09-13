@@ -101,7 +101,7 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
                   className={`gsap-stagger-item rounded-3xl p-5 xl:p-4 2xl:p-5 transition-all duration-300 flex flex-col justify-between h-full relative ${
                     isPopular
                       ? "bg-gradient-to-b from-brand-navy via-slate-900 to-brand-navyDark text-white shadow-2xl ring-2 ring-amber-400 hover:shadow-amber-500/20 hover:-translate-y-1"
-                      : "bg-white text-slate-900 border border-slate-200 shadow-lg hover:shadow-xl hover:border-slate-300 hover:-translate-y-1"
+                      : "bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 text-slate-900 border border-amber-200/90 shadow-lg hover:shadow-xl hover:shadow-amber-500/15 hover:border-amber-400 hover:-translate-y-1"
                   }`}
                 >
                   <div className="flex flex-col flex-1">
@@ -111,7 +111,7 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
                         className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider whitespace-nowrap shrink-0 ${
                           isPopular
                             ? "bg-amber-400 text-slate-950 shadow-sm"
-                            : "bg-slate-100 text-slate-700 border border-slate-200"
+                            : "bg-amber-100/80 text-amber-900 border border-amber-200"
                         }`}
                       >
                         {isPopular && <Sparkles className="w-3 h-3 text-slate-950 shrink-0" />}
@@ -155,11 +155,11 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
                       </p>
                     </div>
 
-                    {/* Pricing Display */}
+                    {/* Pricing Display with warm yellowish gradient */}
                     <div className={`my-4 p-3.5 rounded-2xl border ${
                       isPopular 
                         ? "bg-slate-800/80 border-amber-400/30 text-white" 
-                        : "bg-slate-50 border-slate-200/80 text-slate-900"
+                        : "bg-gradient-to-r from-amber-100/70 via-amber-50 to-amber-100/40 border-amber-200 text-slate-900"
                     }`}>
                       <div className="flex items-baseline gap-2">
                         <span
@@ -248,7 +248,7 @@ export const SwasthFitPackages: React.FC<SwasthFitPackagesProps> = ({ onSelectPa
 
         {/* MODE 2: MATRIX TABLE */}
         {viewMode === "matrix" && (
-          <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+          <div className="bg-gradient-to-b from-amber-50/60 via-white to-amber-50/40 rounded-3xl shadow-xl border border-amber-200/80 overflow-hidden">
             <div className="p-4 sm:p-6 bg-brand-navy text-white flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">

@@ -81,16 +81,16 @@ export const PopularTestsSection: React.FC<PopularTestsSectionProps> = ({ onBook
           </div>
         </div>
 
-        {/* Tests Grid: GSAP Stagger */}
+        {/* Tests Grid: GSAP Stagger with Yellowish Gradient Cards */}
         <div className="gsap-stagger-group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {filteredTests.map((test) => (
             <div
               key={test.id}
-              className="gsap-stagger-item rounded-2xl p-6 bg-slate-50/70 border border-slate-200/90 hover:border-sky-300 hover:bg-white hover:shadow-lg transition-all flex flex-col justify-between h-full"
+              className="gsap-stagger-item rounded-2xl p-6 bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 border border-amber-200/80 hover:border-amber-400/90 hover:shadow-xl hover:shadow-amber-500/15 transition-all flex flex-col justify-between h-full"
             >
               <div>
                 <div className="flex items-start justify-between gap-2 mb-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-100/80 text-sky-800">
+                  <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100/90 text-amber-900 border border-amber-200">
                     {test.category}
                   </span>
                   <span className="text-xs text-slate-400 font-mono">

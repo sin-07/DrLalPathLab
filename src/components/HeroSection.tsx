@@ -193,8 +193,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </div>
 
               {/* Floating Quality Assurance Pill */}
-              <div className="gsap-float absolute top-3 right-3 sm:-top-5 sm:-right-4 bg-white/95 backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-2xl shadow-xl border border-slate-200 flex items-center gap-2.5 sm:gap-3">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0">
+              <div className="gsap-float absolute top-3 right-3 sm:-top-5 sm:-right-4 bg-gradient-to-r from-amber-50 via-white to-amber-50/90 backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-2xl shadow-xl border border-amber-200/90 flex items-center gap-2.5 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-600 shrink-0">
                   <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
@@ -209,28 +209,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         </div>
 
         {/* BOTTOM METRICS STRIP: GSAP Reveal Upward */}
-        <div className="gsap-reveal-up mt-16 sm:mt-20 pt-8 border-t border-slate-200/80">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="gsap-reveal-up mt-16 sm:mt-20 pt-8 border-t border-amber-200/50">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             
-            <div className="p-4 rounded-2xl bg-white/80 backdrop-blur border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+            <div className="p-4 rounded-2xl bg-gradient-to-b from-amber-50/80 via-white to-amber-100/40 backdrop-blur border border-amber-200/80 shadow-sm hover:shadow-md hover:border-amber-400 transition-all">
               <div className="text-3xl sm:text-4xl font-black text-slate-950 font-heading">75+</div>
               <div className="text-xs font-bold text-amber-600 mt-1 uppercase tracking-wider">Years Brand Legacy</div>
               <div className="text-xs text-slate-500 mt-0.5">Dr Lal PathLabs Excellence</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white/80 backdrop-blur border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+            <div className="p-4 rounded-2xl bg-gradient-to-b from-amber-50/80 via-white to-amber-100/40 backdrop-blur border border-amber-200/80 shadow-sm hover:shadow-md hover:border-amber-400 transition-all">
               <div className="text-3xl sm:text-4xl font-black text-sky-600 font-heading">5,000+</div>
               <div className="text-xs font-bold text-slate-800 mt-1 uppercase tracking-wider">Diagnostic Tests</div>
               <div className="text-xs text-slate-500 mt-0.5">Routine to Specialized Panels</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white/80 backdrop-blur border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+            <div className="p-4 rounded-2xl bg-gradient-to-b from-amber-50/80 via-white to-amber-100/40 backdrop-blur border border-amber-200/80 shadow-sm hover:shadow-md hover:border-amber-400 transition-all">
               <div className="text-3xl sm:text-4xl font-black text-emerald-600 font-heading">₹0</div>
               <div className="text-xs font-bold text-emerald-700 mt-1 uppercase tracking-wider">Home Sample Pickup</div>
               <div className="text-xs text-slate-500 mt-0.5">Free in Jaganpura & Surrounding</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white/80 backdrop-blur border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+            <div className="p-4 rounded-2xl bg-gradient-to-b from-amber-50/80 via-white to-amber-100/40 backdrop-blur border border-amber-200/80 shadow-sm hover:shadow-md hover:border-amber-400 transition-all">
               <div className="text-3xl sm:text-4xl font-black text-slate-950 font-heading">100%</div>
               <div className="text-xs font-bold text-sky-700 mt-1 uppercase tracking-wider">NABL / CAP Calibrated</div>
               <div className="text-xs text-slate-500 mt-0.5">Automated Clinical Analysis</div>

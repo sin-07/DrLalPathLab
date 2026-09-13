@@ -59,7 +59,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenBooking }) => {
             return (
               <div
                 key={index}
-                className="gsap-stagger-item relative p-6 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between h-full"
+                className="gsap-stagger-item relative p-6 rounded-3xl bg-gradient-to-b from-amber-50/75 via-white to-amber-100/40 border border-amber-200/80 shadow-md hover:border-amber-400 hover:shadow-xl hover:shadow-amber-500/15 hover:-translate-y-1 transition-all flex flex-col justify-between h-full"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">

@@ -27,8 +27,8 @@ export const ConsumerRightsSection: React.FC = () => {
         {/* 3 Pillars Grid: GSAP Reveal Stagger */}
         <div className="gsap-stagger-group grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           
-          {/* Pillar 1: Pre-Payment Verification */}
-          <div className="gsap-stagger-item rounded-3xl p-8 bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between h-full">
+          {/* Pillar 1: Pre-Payment Verification with Yellowish Gradient */}
+          <div className="gsap-stagger-item rounded-3xl p-8 bg-gradient-to-b from-amber-50/75 via-white to-amber-100/40 border border-amber-200/90 shadow-lg hover:shadow-xl hover:border-amber-400 transition-all flex flex-col justify-between h-full">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6 shadow-sm">
                 <UserCheck className="w-7 h-7" />
@@ -111,8 +111,8 @@ export const ConsumerRightsSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Pillar 3: Computer Generated Bill */}
-          <div className="gsap-stagger-item rounded-3xl p-8 bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between h-full">
+          {/* Pillar 3: Computer Generated Bill with Yellowish Gradient */}
+          <div className="gsap-stagger-item rounded-3xl p-8 bg-gradient-to-b from-amber-50/75 via-white to-amber-100/40 border border-amber-200/90 shadow-lg hover:shadow-xl hover:border-amber-400 transition-all flex flex-col justify-between h-full">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center mb-6 shadow-sm">
                 <ReceiptText className="w-7 h-7" />

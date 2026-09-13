@@ -127,8 +127,8 @@ export const FaqSection: React.FC = () => {
                 key={faq.id}
                 className={`rounded-2xl transition-all duration-300 border overflow-hidden ${
                   isOpen
-                    ? "bg-white border-amber-400/80 shadow-xl shadow-amber-500/10 ring-1 ring-amber-400/30"
-                    : "bg-white/80 hover:bg-white border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300"
+                    ? "bg-gradient-to-b from-amber-100/60 via-amber-50/90 to-white border-amber-400 shadow-xl shadow-amber-500/10 ring-1 ring-amber-400/40"
+                    : "bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 hover:from-amber-100/50 hover:to-white border-amber-200/80 shadow-sm hover:shadow-md hover:border-amber-300"
                 }`}
               >
                 {/* Accordion Trigger Header */}

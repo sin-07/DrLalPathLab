@@ -135,7 +135,7 @@ export const HomeCollectionModal: React.FC<HomeCollectionModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto animate-ultimate-backdrop">
-      <div className="relative w-full max-w-xl my-6 sm:my-8 bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden animate-ultimate-popup">
+      <div className="relative w-full max-w-xl my-6 sm:my-8 bg-gradient-to-b from-amber-50/40 via-white to-amber-50/20 rounded-3xl shadow-2xl border border-amber-200/90 overflow-hidden animate-ultimate-popup">
         
         {/* Header Bar */}
         <div className="bg-gradient-to-r from-brand-navy via-slate-900 to-brand-navyDark p-5 sm:p-6 text-white relative">
@@ -176,8 +176,8 @@ export const HomeCollectionModal: React.FC<HomeCollectionModalProps> = ({
                 </p>
               </div>
 
-              {/* Confirmation Details Card */}
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-2 text-xs">
+              {/* Confirmation Details Card with Yellowish Gradient */}
+              <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-50/90 via-white to-amber-100/50 border border-amber-200 text-left space-y-2 text-xs">
                 <div className="flex justify-between items-center py-1 border-b border-slate-200">
                   <span className="text-slate-500 font-medium">Booking ID:</span>
                   <span className="font-bold text-slate-900 font-mono text-sm">

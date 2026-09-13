@@ -35,9 +35,9 @@ export const ContactSection: React.FC = () => {
         {/* 2 Equal-Sized Symmetrical Columns (Both cards same height) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
-          {/* Card 1 (Left): Center Identification & In-Charge Details */}
+          {/* Card 1 (Left): Center Identification & In-Charge Details with Yellowish Gradient */}
           <div className="gsap-reveal-left h-full">
-            <div className="h-full bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 flex flex-col justify-between">
+            <div className="h-full bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 rounded-3xl p-6 sm:p-8 shadow-xl border border-amber-200/90 flex flex-col justify-between">
               
               <div className="space-y-6">
                 {/* Brand Header */}
@@ -147,15 +147,15 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 2 (Right): Prescription WhatsApp & Location Directions (Identical Height) */}
+          {/* Card 2 (Right): Prescription WhatsApp & Location Directions (Identical Height with Yellowish Gradient) */}
           <div className="gsap-reveal-right h-full">
-            <div className="h-full bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 flex flex-col justify-between">
+            <div className="h-full bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 rounded-3xl p-6 sm:p-8 shadow-xl border border-amber-200/90 flex flex-col justify-between">
               
               <div className="space-y-6">
                 {/* Header */}
                 <div className="border-b border-slate-200 pb-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-black uppercase mb-3 shadow-sm">
-                    <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-xs font-black uppercase mb-3 shadow-sm">
+                    <Sparkles className="w-3.5 h-3.5 text-slate-950" />
                     <span>Instant Support &amp; Prescription</span>
                   </div>
                   <h3 className="text-2xl font-black text-slate-900 font-heading">
@@ -180,15 +180,15 @@ export const ContactSection: React.FC = () => {
 
                   <a
                     href="tel:7654041612"
-                    className="w-full py-3 px-6 rounded-2xl font-bold text-sm text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-300 flex items-center justify-center gap-2 transition-all"
+                    className="w-full py-3 px-6 rounded-2xl font-bold text-sm text-slate-800 bg-white hover:bg-amber-50 border border-slate-300 flex items-center justify-center gap-2 transition-all shadow-sm"
                   >
                     <Phone className="w-4 h-4 text-sky-600" />
                     <span>Call Us Direct (+91 7654041612)</span>
                   </a>
                 </div>
 
-                {/* Patna Center Location Box */}
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2.5">
+                {/* Patna Center Location Box with Yellowish Gradient */}
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-100/70 via-amber-50 to-amber-100/50 border border-amber-200 text-xs space-y-2.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 font-bold text-slate-800">
                       <Building className="w-4 h-4 text-sky-600 shrink-0" />
